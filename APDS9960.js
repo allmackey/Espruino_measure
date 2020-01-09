@@ -82,7 +82,9 @@ GIEN           : 0       // Disable gesture interrupts
 function APDS9960(i2c) {
   this.addr = 0x39;
   this.i2c = i2c;
-  if (this.r(R.ID)!=0xAB) throw "APDS9960 not found ("+this.r(R.ID)+")";
+  new rd = this.r(R.ID);
+  print(rd);
+  if (rd!=0xAB) throw "APDS9960 not found ("+this.r(R.ID)+")";
   // disable everything initially
   this.w(R.ENABLE, 0);
   /* Set default values for ambient light and proximity registers */
