@@ -188,6 +188,6 @@ APDS9960.prototype.getRGBA = function() {
 
 exports.APDS9960 = APDS9960;
 
-exports.connect = function(i2c) {
+exports.connectI2C = function(i2c) {
   return new APDS9960(i2c);
 };
