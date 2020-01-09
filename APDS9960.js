@@ -83,7 +83,7 @@ function APDS9960(i2c) {
   this.addr = 0x39;
   this.i2c = i2c;
   print("V0");
-  if (this.r(R.ID)!=0xAB) throw "APDS9960 not found ("+this.r(R.ID)+")";
+  if (this.r(R.ID)!=57) throw "APDS9960 not found ("+this.r(R.ID)+")";
   // disable everything initially
   this.w(R.ENABLE, 0);
   /* Set default values for ambient light and proximity registers */
