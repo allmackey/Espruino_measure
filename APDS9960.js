@@ -80,9 +80,10 @@ GIEN           : 0       // Disable gesture interrupts
 };
 
 function APDS9960(i2c) {
+  print("Version 0");
   this.addr = 0x39;
   this.i2c = i2c;
-  var rd = this.r(R.ID);
+  var rd= new DataView(this.r(R.ID,2).buffer);
   print(rd);
   if (rd!=0xAB) throw "APDS9960 not found ("+this.r(R.ID)+")";
   // disable everything initially
